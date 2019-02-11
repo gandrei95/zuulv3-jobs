@@ -5,15 +5,18 @@
       zuul_console:
 
 - hosts: all
+  become: True
   
   tasks:
+    - name: Update all repositories
+      apt:
+        update_cache: yes
+
     - name: Install dependencies
       apt:
         name: "{{ item }}"
         state: present
-        update_cache: yes
       with_items: "{{ linux_package_list }}"
-      become: True
 
     - name: Print zuul var content
       debug:

@@ -1,4 +1,3 @@
-
 - hosts: primary
   become: True
 
