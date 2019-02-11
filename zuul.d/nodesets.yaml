@@ -2,12 +2,12 @@
     name: test-nodeset-single-node
     nodes:
       - name: primary
-        label: ubuntu1604
+        label: ubuntu-bionic
 
 - nodeset:
     name: test-nodeset-multi-node
     nodes:
       - name: primary
-        label: ubuntu1604
+        label: ubuntu-bionic
       - name: secundary
-        label: ubuntu1604
+        label: ubuntu-bionic
