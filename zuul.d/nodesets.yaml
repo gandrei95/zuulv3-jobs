@@ -3,6 +3,8 @@
     nodes:
       - name: primary
         label: ubuntu1604
+
+- nodeset:
     name: test-nodeset-multi-node
     nodes:
       - name: primary
