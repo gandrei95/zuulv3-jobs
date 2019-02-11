@@ -11,3 +11,17 @@
         label: ubuntu-bionic
       - name: secundary
         label: ubuntu-bionic
+
+- nodeset:
+    name: test-nodeset-single-node-xenial
+    nodes:
+      - name: primary
+        label: ubuntu1604
+
+- nodeset:
+    name: test-nodeset-multi-node-xenial
+    nodes:
+      - name: primary
+        label: ubuntu1604
+      - name: secundary
+        label: ubuntu1604

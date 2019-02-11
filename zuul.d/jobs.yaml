@@ -18,7 +18,7 @@
     pre-run: playbooks/test-job-single-node/pre.yaml
     run: playbooks/test-job-single-node/run.yaml
     post-run: playbooks/test-job-single-node/post.yaml
-    nodeset: test-nodeset-single-node
+    nodeset: test-nodeset-single-node-xenial
     vars:
       ansible_python_interpreter: /usr/bin/python3
 
@@ -30,6 +30,6 @@
     pre-run: playbooks/test-job-multi-node/pre.yaml
     run: playbooks/test-job-multi-node/run.yaml
     post-run: playbooks/test-job-multi-node/post.yaml
-    nodeset: test-nodeset-multi-node
+    nodeset: test-nodeset-multi-node-xenial
     vars:
       ansible_python_interpreter: /usr/bin/python3
