@@ -1,0 +1,8 @@
+- hosts: primary
+  become: True
+
+  tasks:
+    - name: create test-ci-job-post file
+      file:
+        path: /opt/workdir/primary-post.txt
+        state: touch

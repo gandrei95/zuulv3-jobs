@@ -1,0 +1,21 @@
+
+- pipeline:
+    name: check
+    description: |
+      Check pipeline will enqueue all newly created patchsets
+    success-message: build succeeded
+    failure-message: build failed
+    manager: independent
+    trigger:
+      osreview:
+        - event: patchset-created
+        - event: comment-added
+          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(gandrei95)
+    success:
+      buildsdb:
+      osreview:
+        Verified: 1
+    failure:
+      buildsdb:
+      osreview:
+        Verified: 0

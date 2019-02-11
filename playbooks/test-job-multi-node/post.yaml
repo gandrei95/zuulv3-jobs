@@ -1,0 +1,25 @@
+- hosts: primary
+  become: True
+
+  tasks:
+    - name: create test-ci-job-post file
+      file:
+        path: /opt/workdir/primary-post.txt
+        state: touch
+
+- hosts: secundary
+  become: True
+
+  tasks:
+    - name: create test-ci-job-post file
+      file:
+        path: /opt/workdir/secundary-post.txt
+        state: touch
+
+- hosts: all
+  become: True
+  tasks:
+    - name: create test-ci-job-common file
+      file:
+        path: /opt/workdir/common-post.txt
+        state: touch

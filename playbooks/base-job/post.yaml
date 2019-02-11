@@ -1,0 +1,15 @@
+- hosts: all
+
+  tasks:
+    - name: Get some node informations
+      shell: |
+        ip a
+        ip r
+      become: True
+
+- hosts: localhost
+  tasks:
+    - name: Get some localhost informations
+      shell: |
+        ip a
+        ip r

@@ -1,0 +1,11 @@
+- nodeset:
+    name: test-nodeset-single-node
+    nodes:
+      - name: primary
+        label: ubuntu1604
+    name: test-nodeset-multi-node
+    nodes:
+      - name: primary
+        label: ubuntu1604
+      - name: secundary
+        label: ubuntu1604

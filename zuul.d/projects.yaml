@@ -1,0 +1,7 @@
+
+- project:
+    name: openstack-dev/ci-sandbox
+    check:
+      jobs:
+        - test-job-single-node
+        - test-job-multi-node

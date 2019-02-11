@@ -1,0 +1,8 @@
+- hosts: primary
+  become: True
+
+  tasks:
+    - name: create test-ci-job-run file
+      file:
+        path: /opt/workdir/primary-run.txt
+        state: touch

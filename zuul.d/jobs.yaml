@@ -1,0 +1,35 @@
+
+- job:
+    name: base-job
+    parent: null
+    description: |
+      Base job used for testing CI
+    pre-run: playbooks/base-job/pre.yaml
+    post-run: playbooks/base-job/post.yaml
+    vars:
+      ansible_python_interpreter: /usr/bin/python3
+      linux_package_list: ['curl', 'wget', 'vim']
+
+- job:
+    name: test-job-single-node
+    parent: base-job
+    description: |
+      Test CI job inherited from base-job - single node
+    pre-run: playbooks/test-job-single-node/pre.yaml
+    run: playbooks/test-job-single-node/run.yaml
+    post-run: playbooks/test-job-single-node/post.yaml
+    nodeset: test-nodeset-single-node
+    vars:
+      ansible_python_interpreter: /usr/bin/python3
+
+- job:
+    name: test-job-multi-node
+    parent: base-job
+    description: |
+      Test CI job inherited from base-job - multi node
+    pre-run: playbooks/test-job-multi-node/pre.yaml
+    run: playbooks/test-job-multi-node/run.yaml
+    post-run: playbooks/test-job-multi-node/post.yaml
+    nodeset: test-nodeset-multi-node
+    vars:
+      ansible_python_interpreter: /usr/bin/python3

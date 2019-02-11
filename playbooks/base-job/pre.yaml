@@ -1,0 +1,20 @@
+- hosts: all
+
+  tasks:
+    - name: Start zuul console
+      zuul_console:
+
+- hosts: all
+  
+  tasks:
+    - name: Install dependencies
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      with_items: "{{ linux_package_list }}"
+      become: True
+
+    - name: Print zuul var content
+      debug:
+        msg: "{{ zuul | to_nice_yaml }}"
