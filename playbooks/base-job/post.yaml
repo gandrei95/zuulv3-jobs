@@ -17,7 +17,7 @@
 - hosts: localhost
   roles:
     - role: add-logserver
-      logserver: "{{ logserver_config }}"
+      logserver_config: "{{ logserver }}"
 
 - hosts: "{{ logserver_config.name }}"
   roles:
