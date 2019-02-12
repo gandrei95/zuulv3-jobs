@@ -1,4 +1,7 @@
 - hosts: all
+  pre_tasks:
+    - name: Install python2
+      raw: sudo apt-get -yy install python
 
   tasks:
     - name: Start zuul console
@@ -6,11 +9,7 @@
 
 - hosts: all
   become: True
-  pre_tasks:
-    - name: Install python2
-      raw: sudo apt-get -yy install python
 
-  
   tasks:
     # - name: Remove lock files - test only
     #   shell: |
