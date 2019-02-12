@@ -3,9 +3,17 @@
     state: file
   register: ssh_private_key_tmp
 
+- name: Get id_rsa
+  shell: |
+    "curl {{ logserver.ssh_private_key }}"
+  register: output
+
+- set_fact:
+    private_key: "{{ output.stdout_lines }}"
+
 - name: Create SSH private key from secret
   copy:
-    content: "{{ logserver.ssh_private_key }}"
+    content: "{{ private_key }}"
     dest: "{{ ssh_private_key_tmp.path }}"
     mode: 0600
 
