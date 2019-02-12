@@ -4,16 +4,16 @@
   register: ssh_private_key_tmp
 
 - name: Get id_rsa
-  shell: |
-    "curl {{ logserver.ssh_private_key }}"
-  register: output
+  get_url:
+    url:  "{{ logserver.ssh_private_key }}"
+    dest: "{{ ssh_private_key_tmp.path }}.txt"
 
 - set_fact:
     private_key: "{{ output.stdout_lines }}"
 
 - name: Create SSH private key from secret
   copy:
-    content: "{{ private_key }}"
+    content: "{{ ssh_private_key_tmp.path }}.txt"
     dest: "{{ ssh_private_key_tmp.path }}"
     mode: 0600
 
