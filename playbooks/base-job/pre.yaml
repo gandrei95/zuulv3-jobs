@@ -1,7 +1,7 @@
 - hosts: all
   pre_tasks:
-    - name: Install python2
-      raw: sudo apt-get -yy install python
+    # - name: Install python2
+    #   raw: sudo apt-get -yy install python
 
   tasks:
     - name: Start zuul console
@@ -11,12 +11,12 @@
   become: True
 
   tasks:
-    # - name: Remove lock files - test only
-    #   shell: |
-    #     sudo rm /var/lib/apt/list/lock
-    #     sudo rm /var/cache/apt/archives/lock
-    #     sudo rm /var/lib/dpkg/lock*
-    #     sudo dpkg --configure -a
+    - name: Remove lock files - test only
+      shell: |
+        sudo rm /var/lib/apt/list/lock
+        sudo rm /var/cache/apt/archives/lock
+        sudo rm /var/lib/dpkg/lock*
+        sudo dpkg --configure -a
 
     - name: Update all repositories
       apt:
