@@ -21,6 +21,8 @@
     nodeset: test-nodeset-single-node
     vars:
       ansible_python_interpreter: /usr/bin/python3
+    secrets:
+      - logserver_config
 
 - job:
     name: test-job-multi-node
@@ -33,3 +35,5 @@
     nodeset: test-nodeset-multi-node
     vars:
       ansible_python_interpreter: /usr/bin/python3
+    secrets:
+      - logserver_config
