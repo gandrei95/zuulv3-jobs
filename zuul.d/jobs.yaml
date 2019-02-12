@@ -9,6 +9,8 @@
     vars:
       ansible_python_interpreter: /usr/bin/python3
       linux_package_list: ['curl', 'wget', 'vim']
+    secrets:
+      - logserver_config
 
 - job:
     name: test-job-single-node
