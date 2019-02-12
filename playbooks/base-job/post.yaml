@@ -22,4 +22,4 @@
 - hosts: "{{ logserver_config.name }}"
   roles:
     - role: upload-logs
-      zuul_log_url: "http://zuul-node"
+      zuul_log_url: "http://zuul-node:8000"
