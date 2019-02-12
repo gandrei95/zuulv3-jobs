@@ -1,0 +1,2 @@
+logserver_root: /srv/static/logs
+zuul_log_url: "http://zuul-node"

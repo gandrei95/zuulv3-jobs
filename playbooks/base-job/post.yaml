@@ -13,3 +13,13 @@
       shell: |
         ip a
         ip r
+
+- hosts: localhost
+  roles:
+    - role: add-logserver
+      logserver: "{{ logserver_config }}"
+
+- hosts: "{{ logserver_config.name }}"
+  roles:
+    - role: upload-logs
+      zuul_log_url: "http://zuul-node"

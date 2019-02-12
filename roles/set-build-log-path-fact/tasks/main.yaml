@@ -1,0 +1,3 @@
+- name: Set log path for a change
+  set_fact:
+    build_log_path: "{{ zuul.change[-2:] }}/{{ zuul.change }}/{{ zuul.patchset }}/{{ zuul.pipeline }}/{{ zuul.job }}/{{ zuul.build[:7] }}"
