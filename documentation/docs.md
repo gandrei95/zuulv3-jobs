@@ -1,6 +1,6 @@
-DOCS:
-zuul docs: https://zuul-ci.org/docs/zuul/index.html
-nodepool docs: https://zuul-ci.org/docs/nodepool/
+# Official Documentation
+- zuul docs: https://zuul-ci.org/docs/zuul/index.html
+- nodepool docs: https://zuul-ci.org/docs/nodepool/
 
 OS Required: Ubuntu 18.0x
 Why? Because of `bubblewrap` package which is available only on Ubuntu 18.0x.
