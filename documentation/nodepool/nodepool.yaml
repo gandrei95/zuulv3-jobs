@@ -1,0 +1,44 @@
+zookeeper-servers:
+  - host: localhost
+    port: 2181
+
+webapp:
+  port: 8005
+  listen_address: '0.0.0.0'
+
+providers:
+  - name: uc-provider
+    driver: openstack
+    cloud: undercloud
+    boot-timeout: 120
+    launch-timeout: 3600
+    region-name: RegionOne
+    cloud-images:
+      - name: ubuntu-bionic
+        image-name: ubuntu-bionic-zuul
+        username: ubuntu
+      - name: ubuntu1604
+        image-name: ubuntu1604
+        username: ubuntu
+    pools:
+      - name: main-pool-undercloud
+        max-servers: 10
+        availability-zones:
+          - nova
+        networks:
+          - dataplane
+        labels:
+          - name: ubuntu-bionic
+            flavor-name: 'devstack'
+            cloud-image: ubuntu-bionic
+            key-name: default
+            console-log: True
+          - name: ubuntu1604
+            flavor-name: 'devstack'
+            cloud-image: ubuntu1604
+            key-name: default
+            console-log: True
+
+labels:
+  - name: ubuntu-bionic
+  - name: ubuntu1604

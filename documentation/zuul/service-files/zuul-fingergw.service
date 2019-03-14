@@ -1,0 +1,13 @@
+[Unit]
+Description=Zuul Finger Gateway Service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+Group=root
+User=root
+ExecStart=/usr/local/bin/zuul-fingergw -d
+ExecStop=/usr/local/bin/zuul-fingergw stop
+
+[Install]
+WantedBy=multi-user.target

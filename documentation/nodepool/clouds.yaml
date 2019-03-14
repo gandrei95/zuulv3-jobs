@@ -1,0 +1,10 @@
+clouds:
+  undercloud:
+    auth:
+      username: ci-debug
+      password: By2TTD4wtNwPxJueMkCH
+      auth_url: http://10.106.1.37:35357/v3
+      project_name: ci-debug
+      project_domain_name: Default
+      user_domain_name: Default
+    region_name: RegionOne

@@ -1,0 +1,10 @@
+
+- tenant:
+    name: zuul-tenant
+    source:
+      github-projects:
+        config-projects:
+          - gandrei95/zuulv3-jobs
+      osreview:
+        untrusted-projects:
+          - openstack-dev/ci-sandbox
